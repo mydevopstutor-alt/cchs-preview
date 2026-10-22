@@ -1,3 +1,4 @@
+const PIMG={it:['it-lab.jpg','Illustrative image: IT students working with network equipment in a server lab'],ai:['ai-data.jpg','Illustrative image: a student working with AI and data visualisations on multiple screens'],business:['business.jpg','Illustrative image: business students in a meeting reviewing charts on a screen'],health:['healthcare.jpg','Illustrative image: a personal support worker trainee caring for a patient in a healthcare training room']};
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 function card(p){return `<article class="card" data-field="${p.field}" data-cred="${p.cred}"><span class="tag">${FIELDS[p.field]}</span><span class="tag">${p.cred}</span>${FEATURED.includes(p.n)?'<span class="tag">★ Featured</span>':''}<h3 style="margin-top:.7rem">${p.name}</h3><p class="meta">${p.h} hours · ${p.w} weeks</p><p class="fee">${money(p.loc)} domestic · ${money(p.intl)} international</p><p style="margin-top:.8rem"><a class="more" href="program.html?p=${p.id}">Program details →</a></p></article>`}
 /* catalogue */
@@ -14,7 +15,7 @@ const ft=$('#feetable');if(ft)ft.innerHTML=PROGRAMS.map(p=>`<tr><td>${p.n}</td><
 const pd=$('#program');
 if(pd){const id=new URLSearchParams(location.search).get('p');const p=PROGRAMS.find(x=>x.id===id)||PROGRAMS[19];document.title=p.name+' | CCHS';
  const rel=PROGRAMS.filter(x=>x.field===p.field&&x.n!==p.n).slice(0,3);
- pd.innerHTML=`<p class="crumb"><a href="programs.html">Programs</a> / ${FIELDS[p.field]}</p><span class="tag">${p.cred}</span><span class="tag">${FIELDS[p.field]}</span><h1 style="margin-top:.6rem">${p.name}</h1>
+ pd.innerHTML=`<p class="crumb"><a href="programs.html">Programs</a> / ${FIELDS[p.field]}</p><span class="tag">${p.cred}</span><span class="tag">${FIELDS[p.field]}</span><h1 style="margin-top:.6rem">${p.name}</h1>${PIMG[p.field]?`<figure class="pimg"><img src="images/${PIMG[p.field][0]}" alt="${PIMG[p.field][1]}" loading="lazy"><figcaption class="illus">Illustrative image</figcaption></figure>`:''}
  <div class="kv"><div><b>${p.h}</b><span>instructional hours</span></div><div><b>${p.w}</b><span>weeks</span></div><div><b>${money(p.loc)}</b><span>tuition, domestic students</span></div><div><b>${money(p.intl)}</b><span>tuition, international students</span></div></div>
  <div class="two"><div><h2>At a glance</h2><ul style="color:var(--muted);padding-left:1.2rem;line-height:2">
  <li>Next start date: <span class="phx">Intake dates to be confirmed by CCHS</span></li>

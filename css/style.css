@@ -164,3 +164,9 @@ details{background:#fff;border:1px solid var(--line)}.kv div{background:#fff;bor
 @media(prefers-reduced-motion:reduce){.hero,.phero{animation:none}.card.fx{opacity:1;transform:none;transition:none}}
 .card,.kv div,details,.tbl{color:var(--ink)}h1,h2,h3{color:var(--ink)}.hero h1,.phero h1,.band h2,.band h3{color:#fff}
 .pdetail{padding:3rem 0}.pdetail h1{font-size:clamp(2rem,4.6vw,3.2rem);max-width:22ch;color:var(--crim)}.pdetail .kv b{color:var(--crim)}
+
+.photo.has-img{border:0;background:none;padding:0;display:block;overflow:visible}
+.photo.has-img img{width:100%;height:100%;object-fit:cover;border-radius:28px;display:block;box-shadow:0 18px 40px #0003}
+.illus{position:absolute;left:12px;bottom:12px;background:#fffffff0;color:#7a1027;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;box-shadow:0 2px 6px #0002}
+.pimg{position:relative;margin:1rem 0;max-width:760px}.pimg img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:18px;display:block}
+.photo.has-img .illus{left:auto;right:12px}
